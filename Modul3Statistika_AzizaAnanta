@@ -1,0 +1,32 @@
+data_aziza = read.csv("C:/Users/Aziza Ananta/Documents/PRAKTIKUM SEMESTER 3/Statistika/Prak3.csv", sep = ",")
+View(data_aziza)
+
+aziza<-data_aziza[data_aziza$tinggi.badan==155,]
+View(aziza)
+
+data_aziza$tinggi.badan <- ifelse(data_aziza$tinggi.badan > 160, c("tinggi"), c("pendek"))
+View(aziza)
+
+data_aziza$Jurusan <- c("Infor20")
+data_aziza$Fakultas <- c("FTI")
+View (data_aziza)
+
+data_aziza$Fakultas <- NULL
+View(data_aziza)
+
+data_aziza.kolom1dan2 <- data_aziza[,1:2]
+View(data_aziza.kolom1dan2)
+data_aziza.kolom3dan4 <- data_aziza[,3:4]
+View(data_aziza.kolom3dan4)
+data_aziza.kolom1sd4 <- cbind(data_aziza.kolom1dan2, data_aziza.kolom3dan4)
+View(data_aziza.kolom1sd4)
+
+data_aziza.baris1sd5 <- data_aziza[1:5,]
+View(data_aziza.baris1sd5)
+data_aziza.baris25sd30 <- data_aziza[25:30,]
+View(data_aziza.baris25sd30)
+data_aziza.baris1sd5dan25sd30 <- rbind(data_aziza.baris1sd5, data_aziza.baris25sd30)
+View(data_aziza.baris1sd5dan25sd30)
+
+data_aziza.sort <- data_aziza[order(data_aziza$waktu.perjalanan),] 
+View(data_aziza.sort)
