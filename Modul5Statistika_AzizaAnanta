@@ -1,0 +1,13 @@
+LATIHAN 1
+aziza=read.delim("clipboard")
+View(aziza)
+str(aziza)
+mean(aziza$Volume)
+t.test(aziza$Volume, mu=10)
+
+LATIHAN 2
+aziza51 = read.delim("clipboard")
+View(aziza51)
+str(aziza51)
+mean(aziza51$Volume)
+t.test(aziza51$Volume, mu=14500)
