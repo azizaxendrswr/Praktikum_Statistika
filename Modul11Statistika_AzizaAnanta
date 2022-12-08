@@ -1,0 +1,16 @@
+#LATIHAN PERTAMA
+df_aziza=read.delim("clipboard")
+head(df_aziza)
+model_reg=lm(df_aziza$Y~df_aziza$X)
+summary(model_reg)
+
+#LATIHAN KEDUA
+df_aziza=read.delim("clipboard")
+df_aziza$brick_dummy <- ifelse(df_aziza$Brick =="Yes", 1,0)
+df_aziza$N_dummy1 <- ifelse(df_aziza$Neighborhood =="West", 1,0)
+df_aziza$N_dummy2 <- ifelse(df_aziza$Neighborhood =="North", 1,0)
+model=lm(df_aziza$Price~df_aziza$SqFt+df_aziza$Bedrooms+df_aziza$Bathrooms+df_aziza$brick_dummy+df_aziza$N_dummy1+df_aziza$N_dummy2)
+summary(model)
+
+by(df_aziza$Price, df_aziza$Neighborhood, mean)
+by(df_aziza$Price, df_aziza$Brick, mean)
