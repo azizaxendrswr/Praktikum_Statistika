@@ -1,0 +1,18 @@
+dataku_zee = read.delim("clipboard")
+View(dataku_zee)
+wilcox.test(dataku_zee$Sebelum,dataku_zee$Setelah,paired=TRUE)
+
+df_zee=read.delim("clipboard")
+# independent 2-group Mann-Whitney U Test
+wilcox.test(df_zee$obat~df_zee$grup)
+# where y is numeric and A is A binary factor
+head(df_zee)
+rank(df_zee$obat)
+
+dataku_zee = read.delim("clipboard")
+View(dataku_zee)
+wilcox.test(dataku_zee$Ganjil,dataku_zee$Genap ,paired=TRUE)
+
+dataku_zee = read.delim("clipboard")
+View(dataku_zee)
+wilcox.test(dataku_zee$caffeine,dataku_zee$placebo ,paired=TRUE)
